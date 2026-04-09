@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap");
+
+body {
+  margin: 0;
+  width: 100%;
+  background: #141414;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+  max-width: 100%;
+  justify-content: space-between;
+  left: -1px;
+  padding-top: 30px;
+  padding-right: 162px;
+  padding-bottom: 30px;
+  padding-left: 162px;
+}
+
+/* logo */
+.header_logo img {
+  width: 199px;
+  height: 60px;
+}
+
+/* navbar center */
+.buttons_container {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  border-width: 4px;
+  border-radius: 12px;
+  background: #0f0f0f;
+  border: 4px solid #1f1f1f;
+}
+.buttons_ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.buttons_ul a {
+  text-decoration: none;
+  color: #bfbfbf;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: 0.3s;
+  display: block;
+}
+
+.buttons_ul a:hover {
+  color: #ffffff;
+}
+
+.buttons_li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 14px;
+  padding-right: 24px;
+  padding-bottom: 14px;
+  padding-left: 24px;
+  gap: 10px;
+  border-width: 1px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  white-space: nowrap;
+}
+
+.home_button {
+  width: 50px;
+  height: 27px;
+  font-family: Manrope;
+  font-weight: 500px;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.Movies_and_shows_button {
+  width: 133px;
+  height: 27px;
+  font-family: Manrope;
+  font-weight: 400px;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #bfbfbf;
+}
+
+.support_button {
+  width: 68px;
+  height: 27px;
+  font-family: Manrope;
+  font-weight: 400px;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #bfbfbf;
+}
+
+/* right icons */
+.zari_div {
+  display: flex;
+  gap: 30px;
+  width: 98px;
+  height: 34px;
+}
+
+.zari_div img {
+  width: 34px;
+  height: 34px;
+}
