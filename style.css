@@ -6,12 +6,19 @@ body {
   background: #141414;
 }
 
+/* header */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  backdrop-filter: blur(10px);
+  position: absolute; /* დავამატე */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5; /* ყველაზე მაღალი ფენა */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  backdrop-filter: blur(1px);
   max-width: 100%;
   justify-content: space-between;
   left: -1px;
@@ -127,4 +134,148 @@ header {
 .zari_div img {
   width: 34px;
   height: 34px;
+}
+
+/* sub container */
+.Sub_container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 860px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.hero_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* სურათებზე ზემოთ */
+  pointer-events: none; 
+}
+
+.hero_section {
+  width: 1920px;
+  height: 200px;
+  gap: 20px;
+  /* ???????????????????? */
+}
+
+.hero_content {
+  position: absolute;
+  top: 60%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* ყველაზე ზედა ფენა */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px; 
+  width: 100%;
+  max-width: 1200px; 
+  padding-right: 412px;
+  padding-left: 412px;
+}
+
+.hero_abstract {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 470px;
+  height: auto;
+}
+
+.h1 {
+  width: 1096px;
+  height: 87px;
+  font-family: Manrope;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 58px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.p1 {
+  max-width: 900px;
+  font-family: Manrope;
+  font-weight: 400px;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  margin: 0 auto;
+  color: #999999;
+}
+
+.start_button {
+  width: 251px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto 0 auto;
+  border-radius: 8px;
+  padding-top: 18px;
+  padding-right: 24px;
+  padding-bottom: 18px;
+  padding-left: 24px;
+  background: #e50000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.start_button img {
+  width: 20px;
+  height: 20px;
+}
+
+.button_text {
+  width: 171px;
+  height: 27px;
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.hero_image1 {
+  opacity: 50%;
+  mix-blend-mode: overlay;
+  width: 1920;
+  height: 860;
+  border-radius: 12px;
+}
+
+.hero_FadeOutTop {
+  width: 1920px;
+  height: 581px;
+  background: linear-gradient(180deg, #141414 0%, rgba(20, 20, 20, 0) 100%);
+}
+
+.hero_FadeOutBottom {
+  width: 1920px;
+  height: 581px;
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, #141414 100%);
 }
