@@ -442,3 +442,126 @@ header {
   left: 5.63px;
 }
 
+/* devices section */
+.devices_section {
+  width: 90%;
+  max-width: 1597px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  top: 1962px;
+  left: 161px;
+  gap: 80px;
+}
+
+.devices_textcontainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: 300px;
+}
+
+.devices_h1 {
+  max-width: 1297px;
+  font-family: Manrope;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 38px;
+  white-space: nowrap;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin: 0;
+}
+
+.devices_p {
+  max-width: 1297px;
+  font-family: Manrope;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #999999;
+  margin: 0;
+}
+
+/* device cards */
+.devices_cardcontainer { /* ყველა ქარდი ზევითაც და ქვემოთაც*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 30px;
+  max-width: 1597px;
+  margin: 0 auto;
+}
+
+.device_cards {
+  gap: 30px;
+  border-radius: 12px;
+  border-width: 1px;
+  padding: 50px;
+  background: linear-gradient(
+    221.52deg,
+    rgba(229, 0, 0, 0.5) -208.03%,
+    rgba(229, 0, 0, 0) 41.32%
+  );
+  border: 1px solid #262626;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.device_header {
+  width: 100%;
+  height: auto;
+  gap: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  gap: 10px;
+  border-radius: 12px;
+  border-width: 1px;
+  padding: 16px;
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  width: 19.641475677490234;
+  height: 36;
+  top: 1.6px;
+  left: 10.4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.devicesicon_h2 {
+  width: auto;
+  height: auto;
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin: 0;
+}
+.devicesicon_p {
+  width: 100%;
+  height: auto;
+  font-family: Manrope;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #999999;
+}
