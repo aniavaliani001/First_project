@@ -144,7 +144,7 @@ header {
   height: 860px;
   overflow: hidden;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -165,7 +165,7 @@ header {
   width: 100%;
   height: 100%;
   z-index: 2; /* სურათებზე ზემოთ */
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .hero_section {
@@ -177,7 +177,7 @@ header {
 
 .hero_content {
   position: absolute;
-  top: 60%; 
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3; /* ყველაზე ზედა ფენა */
@@ -185,9 +185,9 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 5px; 
+  gap: 5px;
   width: 100%;
-  max-width: 1200px; 
+  max-width: 1200px;
   padding-right: 412px;
   padding-left: 412px;
 }
