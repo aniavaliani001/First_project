@@ -251,7 +251,23 @@ header {
   color: white;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  transition: 0.3s;
 }
+.start_button:hover {
+  background: #ff1a1a; /* ჰოვერ ეფექტი მეტი სიცოცხლისთვის */
+  transform: scale(1.02);
+}
+
+.start_button img {
+  width: 20px;
+  height: 20px;
+}
+
 .start_button img {
   width: 20px;
   height: 20px;
@@ -907,4 +923,172 @@ header {
 }
 .freetrial_button:hover {
   transform: scale(1.05);
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  max-width: 1920px;
+  min-height: 505px;
+  top: 5013px;
+padding: 80px 0; /* მხოლოდ ზემოთ და ქვემოთ */
+  gap: 100px;
+  background: #0f0f0f;
+  border-top: 1px solid #262626;
+  margin-top: 100px;
+  box-sizing: border-box;
+}
+
+.footer_container {
+  width: 80%;
+  max-width: 1596px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.footer_top {
+  display: grid;
+  width: 100%;
+  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.footer_column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* დაშორება ლინკებს შორის */
+  width: auto; /* წაშალე 241px */
+}
+
+.footer_column a {
+  gap: 14px;
+  width: 241px;
+  height: 27px;
+  font-family: Manrope;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #999999;
+  display: flex;
+  flex-direction: column; /* ლინკები ჩამოწერილია ვერტიკალურად */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer_column a:hover {
+  color: #ffffff;
+}
+
+.footer_column h4 {
+  width: 241px;
+  height: 30px;
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.social_icons {
+  width: 196px;
+  height: 56px;
+  display: flex;
+  gap: 14px;
+}
+
+.social_item {
+  width: 56px;
+  height: 56px;
+  gap: 10px;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 16px;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.social_item img {
+  width: 24px;
+  height: 24px;
+}
+
+.social_item:hover {
+  background: #262626;
+}
+
+.footer_line {
+  width: 100%;
+  height: 1px;
+  max-width: 1596px;
+  background-color: #262626;
+border: none; 
+}
+
+.footer_bottom {
+  width: 100%;
+  max-width: 1596px;
+  height: 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+
+.footer_bottom p {
+width: auto; 
+  height: auto;
+  font-family: Manrope;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #999999;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.footer_linebottom {
+  width: 27px;
+  height: 0px;
+  border-width: 1px;
+  border: 1px solid #262626;
+  width: 1px;
+  height: 20px; /* ხაზის სიმაღლე */
+  background-color: #262626;
+  display: inline-block;
+}
+
+.footer_legal {
+width: auto;
+height: auto;
+  font-family: Manrope;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer_legal a {
+  color: #999999;
+  text-decoration: none;
+  white-space: nowrap;
 }
