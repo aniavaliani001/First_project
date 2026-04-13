@@ -201,12 +201,27 @@ header {
   padding-left: 412px;
 }
 
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg); 
+    opacity: 0; 
+  }
+  to {
+    transform: rotate(360deg); 
+    opacity: 1; 
+  }
+}
+
 .hero_abstract {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 470px;
   height: auto;
+  margin-bottom: 50px;
+  animation-name: logo-spin; 
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
 }
 
 .h1 {
@@ -421,7 +436,14 @@ header {
   max-width: 1597px;
   margin: 0 auto;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.genres_slider::-webkit-scrollbar {
+  display: none;
+}
+
 .genre_card {
   width: 1597px;
   height: 342px;
@@ -646,6 +668,7 @@ header {
 }
 
 .plans_tab {
+  width: 100%;
   max-width: 237px;
   display: flex;
   border-radius: 10px;
@@ -653,9 +676,11 @@ header {
   padding: 10px;
   background: #0f0f0f;
   border: 1px solid #262626;
+  margin-left: auto; /* თუ გინდა რომ მარჯვნივ იდგეს, როგორც ფიგმაშია */
 }
 
-.monthly_btn {
+.monthly_btn, .yearly_btn {
+  flex: 1;
   width: 100%;
   border-radius: 10px;
   gap: 10px;
@@ -664,8 +689,13 @@ header {
   padding-bottom: 14px;
   padding-left: 24px;
   background: #1f1f1f;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.monthly_h6 {
+.monthly_h6, .yearly_h6 {
   font-family: Manrope;
   font-weight: 500;
   font-style: Medium;

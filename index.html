@@ -6,6 +6,7 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -61,11 +62,6 @@
           />
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           <h1 class="h1">The Best Streaming Experience</h1>
         </div>
 
@@ -105,20 +101,20 @@
         </p>
       </div>
       <div class="genres_buttons">
-        <button class="genres_scrollleft">
+        <button class="genres_scrollleft" id="genreLeft">
           <img src="images/genresscrollleft.png" alt="left" />
         </button>
         <button class="indicators_button1"></button>
         <button class="indicators_button2"></button>
         <button class="indicators_button3"></button>
         <button class="indicators_button4"></button>
-        <button class="genres_scrollright">
+        <button class="genres_scrollright" id="genreRight">
           <img src="images/genresscrollright.png" alt="right" />
         </button>
       </div>
     </div>
     <!-- ქვემოთა ჟანრების ფოტოების სქროლი  -->
-    <div class="genres_slider">
+    <div class="genres_slider" id="genreSlider">
       <div class="genre_card">
         <div class="card_image_container">
           <img src="images/actionimages.png" alt="movie" />
@@ -288,8 +284,9 @@
 
             <div class="plans_tab">
               <button class="monthly_btn">
-              <h6 class="monthly_h6">Monthly </h6>
+              <h6 class="monthly_h6" id="monthlyBtn">Monthly </h6>
               </button>
+              <button class="yearly_btn" id="yearlyBtn"><h6 class="yearly_h6">Yearly</h6></button>
             </div>
 
           </div>
@@ -302,7 +299,7 @@
               featuring a range of content, including recently released titles.</p> 
             
               <div class="plan_wrapper">
-                <span class="price_amount">$9.99</span>
+                <span class="price_amount" id="basicPrice">$9.99</span>
                 <span class="price_period">/month</span>
               </div>
 
@@ -320,7 +317,7 @@
                 including most new releases and exclusive content</p> 
             
               <div class="plan_wrapper">
-                <span class="price_amount">$12.99</span>
+                <span class="price_amount" id="standardPrice">$12.99</span>
                 <span class="price_period">/month</span>
               </div>
 
@@ -338,7 +335,7 @@
                  including all new releases and Offline Viewing</p> 
             
               <div class="plan_wrapper">
-                <span class="price_amount">$14.99</span>
+                <span class="price_amount" id="premiumPrice">$14.99</span>
                 <span class="price_period">/month</span>
               </div>
 
