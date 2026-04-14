@@ -145,21 +145,228 @@ header {
   height: 34px;
 }
 
+/* welcome & form */
+.support_welcome {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 0 80px;
+  padding-top: 150px;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-color: #141414;
+  min-height: 100vh;
+}
 
+.support_container {
+  display: flex;
+  gap: 80px;
+  max-width: 1597px;
+  width: 100%;
+  align-items: flex-start;
+}
 
+.support_formcontainer {
+  flex: 1;
+  background: #0f0f0f;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
+.support_container {
+  display: flex;
+  gap: 80px;
+  max-width: 1597px;
+  width: 100%;
+}
 
+.support_info {
+  width: 533px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
 
+.support_textcontent {
+  gap: 14px;
+  display: flex;
+  flex-direction: column;
+}
 
+.support_textcontent h1 {
+  font-family: Manrope;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 48px;
+  line-height: 150%;
+  color: #ffffff;
+  margin: 0;
+}
 
+.support_textcontent p {
+  font-family: Manrope;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 150%;
+  color: #999999;
+  margin: 0;
+}
 
+.support_imagegrid {
+  width: 533px;
+  height: 477px;
+  border-radius: 12px;
+  border-width: 6px;
+  background: #0f0f0f;
+  border: 6px solid #262626;
+  overflow: hidden;
+  position: relative;
+}
 
+.support_imagegrid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
 
+.support_formcontainer {
+  flex: 1;
+  max-width: 976px;
+  height: 627px;
+  gap: 30px;
+  border-radius: 12px;
+  padding: 40px;
+  background: #0f0f0f;
+  border: 1px solid #262626;
+  flex-direction: column;
+}
 
+.support_form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
+.form_row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
 
+.form_group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
+.form_group label {
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
 
+.form_group input,
+.form_group textarea,
+.phone_input select,
+.phone_input input {
+  width: 100%;
+  padding: 16px;
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.form_group textarea {
+  height: 130px;
+  resize: none;
+}
+
+.phone_input {
+  display: flex;
+  gap: 10px;
+  width: auto;
+}
+
+.phone_input select {
+  min-width: 75px;
+  max-width: 75px;
+  height: 67px;
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  color: white;
+  padding: 0;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone_input select option {
+  background: #141414;
+  color: white;
+  font-size: 16px;
+}
+
+.phone_input input {
+  max-width: 303px;
+  height: 67px;
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 20px;
+  color: #999999;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form_row .form_group input[type="email"] {
+  height: 67px; /* რომ ნომრის სიმაღლეს გაუთანაბრდეს */
+}
+
+.form_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox_group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999999;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+}
+
+.send_btn {
+  background: #e50000;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send_btn:hover {
+  background: #ff0000;
+}
 
 /* free trial */
 
@@ -275,7 +482,7 @@ header {
   max-width: 1920px;
   min-height: 505px;
   top: 5013px;
-padding: 80px 0; /* მხოლოდ ზემოთ და ქვემოთ */
+  padding: 80px 0; /* მხოლოდ ზემოთ და ქვემოთ */
   gap: 100px;
   background: #0f0f0f;
   border-top: 1px solid #262626;
@@ -340,7 +547,6 @@ padding: 80px 0; /* მხოლოდ ზემოთ და ქვემოთ
   margin: 0;
 }
 
-
 .social_icons {
   width: 196px;
   height: 56px;
@@ -377,7 +583,7 @@ padding: 80px 0; /* მხოლოდ ზემოთ და ქვემოთ
   height: 1px;
   max-width: 1596px;
   background-color: #262626;
-border: none; 
+  border: none;
 }
 
 .footer_bottom {
@@ -392,7 +598,7 @@ border: none;
 }
 
 .footer_bottom p {
-width: auto; 
+  width: auto;
   height: auto;
   font-family: Manrope;
   font-weight: 400;
@@ -417,8 +623,8 @@ width: auto;
 }
 
 .footer_legal {
-width: auto;
-height: auto;
+  width: auto;
+  height: auto;
   font-family: Manrope;
   font-weight: 400;
   font-style: Regular;
