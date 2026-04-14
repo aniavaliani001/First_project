@@ -44,29 +44,196 @@
       </div>
     </header>
 
-    <div class="Movies_Shows_container">
-      <img src="./images/avengersimage.png" alt="movie" />
-    </div>
 
-    <div class="text_container">
-      <h1 class="h1">Avengers : Endgame</h1>
-      <p class="p1">
+
+
+<section class="hero_section">
+  <div class="hero_container">
+    <img src="./images/avengersimage.png" alt="Avengers Endgame" class="hero_bg" />
+    
+    <div class="hero_overlay"></div>
+
+    <div class="hero_content">
+      <h1>Avengers : Endgame</h1>
+      <p>
         With the help of remaining allies, the Avengers must assemble once more
         in order to undo Thanos's actions and undo the chaos to the universe, no
         matter what consequences may be in store, and no matter who they face...
         Avenge the fallen.
       </p>
-      <button class="start_button">
-        <img src="./images/Icon.png" alt="play" class="button_text" />
-        Play Now
-      </button>
+      
+      <div class="hero_buttons">
+        <button class="play_now">
+          <img src="./images/Icon.png" alt="play" />
+          Play Now
+        </button>
+        <button class="icon_btn"><img src="./images/plus-Icon.png" alt="plus"></button>
+        <button class="icon_btn"><img src="./images/like-Icon.png" alt="like"></button>
+      
+      </div>
+    </div>
+  </div>
+</section> 
 
-      <a href="./index.html">
-        <img src="./images/lupa.png" alt="search" />
-      </a>
-      <a href="./index.html">
-        <img src="./images/zari.png" alt="notifications" />
-      </a>
+
+<!-- 
+<section class="genres_section">
+  <div class="genres_container">
+    
+    <div class="category_badge">Movies</div>
+
+    <div class="genres_header">
+      <h2>Our Genres</h2>
+      <div class="genres_navigation">
+        <button class="nav_btn"><img src="./images/left-arrow.png" alt="prev"></button>
+        <div class="nav_indicators">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="nav_btn"><img src="./images/right-arrow.png" alt="next"></button>
+      </div>
+    </div>
+
+    <div class="genres_grid">
+      <div class="genre_card">
+        <div class="genre_images">
+          <img src="./images/action1.png"><img src="./images/action2.png">
+          <img src="./images/action3.png"><img src="./images/action4.png">
+        </div>
+        <div class="genre_info">
+          <span>Action</span>
+          <img src="./images/right-arrow-small.png">
+        </div>
+      </div>
+      </div>
+
+  </div>
+</section> -->
+
+<section class="movies_genres_section">
+  <div class="genres_container">
+    <div class="genres_textcontainer">
+      <div class="category_badge">Movies</div>
+      <h2 class="genres_textheading">Our Genres</h2>
+    </div>
+
+    <div class="genres_buttons">
+      <button class="genres_scrollleft" id="genreLeft">
+        <img src="images/genresscrollleft.png" alt="left" />
+      </button>
+      <div class="indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <button class="genres_scrollright" id="genreRight">
+        <img src="images/genresscrollright.png" alt="right" />
+      </button>
+    </div>
+  </div>
+
+  <div class="genres_slider" id="genreSlider">
+    <div class="genre_card">
+      <div class="card_image_container">
+        <img src="images/actionimages.png" alt="Action" />
+      </div>
+      <div class="card_footer">
+        <span>Action</span>
+        <a href="#"><img src="images/genresscrollright.png" alt="arrow" /></a>
+      </div>
+    </div>
+
+    <div class="genre_card">
+      <div class="card_image_container">
+        <img src="images/adventureimages.png" alt="Adventure" />
+      </div>
+      <div class="card_footer">
+        <span>Adventure</span>
+        <a href="#"><img src="images/genresscrollright.png" alt="arrow" /></a>
+      </div>
+    </div>
+
+    </div>
+</section>
+
+<div class="genres_buttons">
+        <button class="genres_scrollleft" id="genreLeft">
+          <img src="images/genresscrollleft.png" alt="left" />
+        </button>
+        <button class="indicators_button1"></button>
+        <button class="indicators_button2"></button>
+        <button class="indicators_button3"></button>
+        <button class="indicators_button4"></button>
+        <button class="genres_scrollright" id="genreRight">
+          <img src="images/genresscrollright.png" alt="right" />
+        </button>
+      </div>
+    </div>
+    <!-- ქვემოთა ჟანრების ფოტოების სქროლი  -->
+    <div class="genres_slider" id="genreSlider">
+      <div class="genre_card">
+        <div class="card_image_container">
+          <img src="images/actionimages.png" alt="movie" />
+        </div>
+        <div class="card_footer">
+          <span>Action</span>
+          <a href="movies_shows_button.html">
+            <img src="images/genresscrollright.png" alt="arrow" />
+          </a>
+        </div>
+      </div>
+
+      <div class="genre_card">
+        <div class="card_image_container">
+          <img src="images/adventureimages.png" alt="movie" />
+        </div>
+        <div class="card_footer">
+          <span>Adventure</span>
+          <a href="movies_shows_button.html">
+            <img src="images/genresscrollright.png" alt="arrow" />
+          </a>
+        </div>
+      </div>
+      <div class="genre_card">
+        <div class="card_image_container">
+          <img src="images/comedyimages.png" alt="movie" />
+        </div>
+        <div class="card_footer">
+          <span>Comedy</span>
+          <a href="movies_shows_button.html">
+            <img src="images/genresscrollright.png" alt="arrow" />
+          </a>
+        </div>
+      </div>
+
+      <div class="genre_card">
+        <div class="card_image_container">
+          <img src="images/Dramaimages.png" alt="movie" />
+        </div>
+        <div class="card_footer">
+          <span>Drama</span>
+          <a href="movies_shows_button.html">
+            <img src="images/genresscrollright.png" alt="arrow" />
+          </a>
+        </div>
+      </div>
+
+      <div class="genre_card">
+        <div class="card_image_container">
+          <img src="images/horrorimages.png" alt="movie" />
+        </div>
+        <div class="card_footer">
+          <span>Horror</span>
+          <a href="movies_shows_button.html">
+            <img src="images/genresscrollright.png" alt="arrow" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+
 
       <div class="freetrial_container">
         <img
