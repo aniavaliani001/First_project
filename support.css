@@ -642,3 +642,19 @@ header {
   text-decoration: none;
   white-space: nowrap;
 }
+
+.error-text {
+  color: #e50000;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  display: block;
+  margin-top: 4px;
+  min-height: 16px; /* რომ ერორის გაჩენისას ფორმა არ ათამაშდეს */
+}
+
+/* რომ checkbox-ის ერორი ლამაზად დაჯდეს */
+.checkbox_container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

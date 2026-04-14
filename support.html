@@ -6,6 +6,7 @@
     <title>Support</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="support.css" />
+    <script src="support.js" defer></script>
   </head>
   <body>
     <header>
@@ -61,45 +62,50 @@
         </div>
 
         <div class="support_formcontainer">
-          <form class="support_form">
+          <form class="support_form" id="supportForm">
             <div class="form_row">
               <div class="form_group">
-                <label>First Name</label>
-                <input type="text" placeholder="Enter First Name" />
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter First Name" />
+                <span id="firstNameError" class="error-text"></span>
               </div>
               <div class="form_group">
-                <label>Last Name</label>
-                <input type="text" placeholder="Enter Last Name" />
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter Last Name" />
+                <span id="lastNameError" class="error-text"></span>
               </div>
             </div>
 
             <div class="form_row">
               <div class="form_group">
-                <label>Email</label>
-                <input type="email" placeholder="Enter your Email" />
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your Email" />
+                <span id="emailError" class="error-text"></span>
               </div>
               <div class="form_group">
                 <label>Phone Number</label>
                 <div class="phone_input">
-                  <select>
-                    <option value="us">🇺🇸</option>
-                    <option value="ge">🇬🇪</option>
-                    <option value="bg">🇧🇬</option>
-                    <option value="jp">🇯🇵</option>
-                    <option value="it">🇮🇹</option>
-                    <option value="gr">🇬🇷</option>
-                    <option value="pt">🇵🇹</option>
-                    <option value="de">🇩🇪</option>
+                  <select id="country-select">
+                    <option value="+1" selected>🇺🇸</option>
+                    <option value="+995">🇬🇪</option>
+                    <option value="+359">🇧🇬</option>
+                    <option value="+81">🇯🇵</option>
+                    <option value="+39">🇮🇹</option>
+                    <option value="+30">🇬🇷</option>
+                    <option value="+351">🇵🇹</option>
+                    <option value="+49">🇩🇪</option>
                     <option value="other">Other</option>
                   </select>
-                  <input type="text" placeholder="Enter Phone Number" />
+                  <input type="text" id="phone" placeholder="Enter Phone Number" />
                 </div>
+                <span id="phoneError" class="error-text"></span>
               </div>
             </div>
 
             <div class="form_group">
               <label>Message</label>
-              <textarea placeholder="Enter your Message"></textarea>
+              <textarea id="message" placeholder="Enter your Message"></textarea>
+              <span id="messageError" class="error-text"></span>
             </div>
 
             <div class="form_footer">
@@ -109,6 +115,7 @@
                   >I agree with Terms of Use and Privacy Policy</label
                 >
               </div>
+              <span id="termsError" class="error-text"></span>
               <button type="submit" class="send_btn">Send Message</button>
             </div>
           </form>
