@@ -36,8 +36,28 @@ if (slider && leftBtn && rightBtn) {
   });
 }
 
+const observerOptions = {
+  root: document.getElementById('genreSlider'), //სლაიდერი
+  threshold: 0.7 // ქარდის 70% მაინც უნდა ჩანდეს, რომ აინთოს
+};
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // როცა ქარდი შემოდის ხედვის არეში
+      entry.target.classList.add('reveal-focus');
+      
+      // ანიმაციის მერე მოვაშოროთ კლასი, რომ შემდეგზეც იმუშაოს
+      setTimeout(() => {
+        entry.target.classList.remove('reveal-focus');
+      }, 800); 
+    }
+  });
+}, observerOptions);
 
+document.querySelectorAll('.genre_card').forEach(card => {
+  observer.observe(card);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const monthlyBtn = document.getElementById('monthlyBtn');

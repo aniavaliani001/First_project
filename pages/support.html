@@ -23,7 +23,10 @@
           </li>
 
           <li class="buttons_li">
-            <a class="Movies_and_shows_button" href="../pages/movies_shows_button.html">
+            <a
+              class="Movies_and_shows_button"
+              href="../pages/movies_shows_button.html"
+            >
               Movies & Shows
             </a>
           </li>
@@ -62,16 +65,24 @@
         </div>
 
         <div class="support_formcontainer">
-          <form class="support_form" id="supportForm">
+          <form class="support_form" id="supportForm" novalidate>
             <div class="form_row">
               <div class="form_group">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" placeholder="Enter First Name" />
+                <input
+                  type="text"
+                  id="firstName"
+                  placeholder="Enter First Name"
+                />
                 <span id="firstNameError" class="error-text"></span>
               </div>
               <div class="form_group">
                 <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" placeholder="Enter Last Name" />
+                <input
+                  type="text"
+                  id="lastName"
+                  placeholder="Enter Last Name"
+                />
                 <span id="lastNameError" class="error-text"></span>
               </div>
             </div>
@@ -96,7 +107,11 @@
                     <option value="+49">🇩🇪</option>
                     <option value="other">Other</option>
                   </select>
-                  <input type="text" id="phone" placeholder="Enter Phone Number" />
+                  <input
+                    type="text"
+                    id="phone"
+                    placeholder="Enter Phone Number"
+                  />
                 </div>
                 <span id="phoneError" class="error-text"></span>
               </div>
@@ -104,7 +119,10 @@
 
             <div class="form_group">
               <label>Message</label>
-              <textarea id="message" placeholder="Enter your Message"></textarea>
+              <textarea
+                id="message"
+                placeholder="Enter your Message"
+              ></textarea>
               <span id="messageError" class="error-text"></span>
             </div>
 
@@ -119,6 +137,147 @@
               <button type="submit" class="send_btn">Send Message</button>
             </div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq_section">
+      <div class="faq_header">
+        <div class="faq_text">
+          <h1>Frequently Asked Questions</h1>
+          <p>
+            Got questions? We've got answers! Check out our FAQ section to find
+            answers to the most common questions about StreamVibe.
+          </p>
+        </div>
+        <button class="ask_question_btn">Ask a Question</button>
+      </div>
+
+      <div class="faq_container">
+        <div class="faq_column">
+          <div class="faq_item active">
+            <span class="faq_number">01</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>What is StreamVibe?</h3>
+                <span class="faq_icon">−</span>
+              </div>
+              <p class="faq_answer">
+                StreamVibe is a streaming service that allows you to watch
+                movies and shows on demand.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq_item">
+            <span class="faq_number">02</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>How much does StreamVibe cost?</h3>
+                <span class="faq_icon">+</span>
+              </div>
+              <div class="faq_answer">
+                StreamVibe has 3 plans:
+                <ul>
+                  <li><strong>Basic:</strong> Monthly $9.99 / Yearly $95.99</li>
+                  <li>
+                    <strong>Standard:</strong> Monthly $12.99 / Yearly $120.99
+                  </li>
+                  <li>
+                    <strong>Premium:</strong> Monthly $14.99 / Yearly $145.99
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq_item">
+            <span class="faq_number">03</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>What content is available on StreamVibe?</h3>
+                <span class="faq_icon">+</span>
+              </div>
+              <p class="faq_answer">
+                We offer a vast library of latest blockbusters, exclusive TV
+                shows, documentaries, and even Anime. Our library is updated
+                weekly!
+              </p>
+            </div>
+          </div>
+
+          <div class="faq_item">
+            <span class="faq_number">04</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>How can I watch StreamVibe?</h3>
+                <span class="faq_icon">+</span>
+              </div>
+              <p class="faq_answer">
+                You can watch StreamVibe on smartphones, tablets, Smart TVs,
+                laptops, or gaming consoles through our app or any web browser.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_column">
+          <div class="faq_item">
+            <span class="faq_number">05</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>How do I sign up for StreamVibe?</h3>
+                <span class="faq_icon">+</span>
+              </div>
+              <p class="faq_answer">
+                To sign up, click the "Start a Free Trial" button, enter your
+                email address, and choose a password to create your account.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq_item">
+            <span class="faq_number">06</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>What is the StreamVibe free trial?</h3>
+                <span class="faq_icon">+</span>
+              </div>
+              <p class="faq_answer">
+                Our free trial allows you to access all Premium features for 7
+                days without any charge, so you can test our service.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq_item">
+            <span class="faq_number">07</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>How do I contact StreamVibe customer support?</h3>
+                <span class="faq_icon">+</span>
+              </div>
+              <p class="faq_answer">
+                You can contact us via the "Support" page by filling out the
+                contact form, or by using our 24/7 live chat feature on the
+                website.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq_item">
+            <span class="faq_number">08</span>
+            <div class="faq_content">
+              <div class="faq_question">
+                <h3>What are the StreamVibe payment methods?</h3>
+                <span class="faq_icon">+</span>
+              </div>
+              <p class="faq_answer">
+                We accept all major credit/debit cards (Visa, Mastercard),
+                PayPal, and Google/Apple Pay for your convenience.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -140,7 +299,9 @@
             sign up for a free trial of StreamVibe.
           </p>
         </div>
-        <a href="../pages/support.html" class="freetrial_button">Start a Free Trial</a>
+        <a href="../pages/support.html" class="freetrial_button"
+          >Start a Free Trial</a
+        >
       </div>
     </div>
 
@@ -206,5 +367,8 @@
         </div>
       </div>
     </footer>
+    <button id="backToTop" class="back_to_top">
+      <img src="../images/arrowup-image.png" alt="Up" />
+    </button>
   </body>
 </html>
