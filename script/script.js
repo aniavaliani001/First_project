@@ -4,16 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const acceptBtn = document.getElementById("acceptBtn");
   const rejectBtn = document.getElementById("rejectBtn");
 
-  // შემოწმება მეხსიერებაში
-  const isAccepted = localStorage.getItem("cookiesAccepted");
-  console.log("Cookie Check:", isAccepted);
+  console.log("Cookie Check:", localStorage.getItem("cookiesAccepted"));
 
-  // თუ ჩანაწერი არ არსებობს (null-ია), გამოვაჩინოთ მოდალი
-  if (!isAccepted) {
-    cookieModal.style.display = "flex";
+  if (localStorage.getItem("cookiesAccepted")) {
+    cookieModal.style.display = "flex"; 
     document.body.classList.add("no-scroll");
-  } else {
-    cookieModal.style.display = "none";
   }
 
   acceptBtn.addEventListener("click", () => {
