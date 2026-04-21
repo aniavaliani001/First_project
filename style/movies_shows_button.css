@@ -586,3 +586,54 @@ height: auto;
   text-decoration: none;
   white-space: nowrap;
 }
+
+
+
+
+
+
+
+
+
+/* scroll btn */
+.back_to_top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #e50000;
+  border: none;
+  border-radius: 50%; /* მრგვალი ღილაკი */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  /* თავიდან ვმალავ */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  box-shadow: 0 4px 15px rgba(229, 0, 0, 0.4);
+}
+
+.back_to_top img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* ათეთრებს აიკონს */
+}
+
+/* როცა გამოჩნდება */
+.back_to_top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back_to_top:hover {
+  background-color: #ff1a1a;
+  transform: scale(1.1);
+}
+
