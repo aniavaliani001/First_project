@@ -1,25 +1,23 @@
 //cookie
 document.addEventListener("DOMContentLoaded", () => {
-  const cookieModal = document.getElementById("cookieModal");
-  const acceptBtn = document.getElementById("acceptBtn");
-  const rejectBtn = document.getElementById("rejectBtn");
+    const cookieModal = document.getElementById("cookieModal");
+    const acceptBtn = document.getElementById("acceptBtn");
+    const rejectBtn = document.getElementById("rejectBtn");
 
-  console.log("Cookie Check:", localStorage.getItem("cookiesAccepted"));
+    if (!sessionStorage.getItem("cookiesAccepted")) {
+        cookieModal.style.display = "flex";
+        document.body.classList.add("no-scroll");
+    }
 
-  if (localStorage.getItem("cookiesAccepted")) {
-    cookieModal.style.display = "flex"; 
-    document.body.classList.add("no-scroll");
-  }
+    acceptBtn.addEventListener("click", () => {
+        sessionStorage.setItem("cookiesAccepted", "true");
+        cookieModal.style.display = "none";
+        document.body.classList.remove("no-scroll");
+    });
 
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "true");
-    cookieModal.style.display = "none";
-    document.body.classList.remove("no-scroll");
-  });
-
-  rejectBtn.addEventListener("click", () => {
-    window.location.href = "https://www.google.com";
-  });
+    rejectBtn.addEventListener("click", () => {
+        window.location.href = "https://www.google.com";
+    });
 });
 
 const logo = document.querySelector(".hero_abstract");
