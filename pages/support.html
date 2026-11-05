@@ -23,12 +23,7 @@
           </li>
 
           <li class="buttons_li">
-            <a
-              class="Movies_and_shows_button"
-              href="../pages/movies_shows_button.html"
-            >
-              Movies & Shows
-            </a>
+            <a class="Movies_and_shows_button" href="../pages/movies_shows_button.html"> Movies & Shows </a>
           </li>
 
           <li class="buttons_li">
@@ -37,17 +32,29 @@
         </ul>
       </nav>
 
-      <!-- right icons -->
+     <!-- Notification icon -->
       <div class="zari_div">
-        <a href="../index.html">
-          <img src="../images/lupa.png" alt="search" />
-        </a>
-        <a href="../index.html">
+        <button id="notifBtn" class="notif_button">
           <img src="../images/zari.png" alt="notifications" />
-        </a>
+         </button>
       </div>
     </header>
 
+    <!-- Notification icon box -->
+    <div id="notifModal" class="custom_modal">
+      <div class="custom_modal_box">
+        <div class="modal_icon">
+          🔔
+        </div>
+          <h2>Stay Updated!</h2>
+          <p>To receive updates and notifications,<br> please register on the Support page!</p>
+            <div class="custom_modal_buttons">
+              <button id="closeNotifBtn" class="btn_cancel">Cancel</button>
+              <button id="goSupportBtn" class="btn_register">Register</button>
+            </div>
+      </div>
+    </div>
+<!-- Welcome -->
     <section class="support_welcome">
       <div class="support_container">
         <div class="support_info">
@@ -63,7 +70,7 @@
             <img src="../images/support_gridimage.png" alt="Support Grid" />
           </div>
         </div>
-
+<!-- Forms -->
         <div class="support_formcontainer">
           <form class="support_form" id="supportForm" novalidate>
             <div class="form_row">
@@ -141,6 +148,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="faq_section">
       <div class="faq_header">
         <div class="faq_text">
@@ -152,7 +160,47 @@
         </div>
         <button class="ask_question_btn">Ask a Question</button>
       </div>
+      
+      <!-- Ask a Question Custom Border Modal -->
+<div id="askQuestionModal" class="custom_modal">
+  <div class="custom_modal_box ask_question_box">
+    <button id="closeAskModal" class="modal_close_x">&times;</button>
+    
+    <!-- 1. Form border -->
+    <div id="askFormContainer">
+      <h2>Ask a Question</h2>
+      <p>Enter your email and question below. <br> We'll reply to your email as soon as possible!</p>
+      
+      <form id="askQuestionForm" class="ask_form">
+        <div class="form_group">
+          <label for="askEmail">Your Email</label>
+          <input type="email" id="askEmail" placeholder="Enter your email" required />
+        </div>
+        
+        <div class="form_group">
+          <label for="askQuestion">Your Question</label>
+          <textarea id="askQuestion" rows="4" placeholder="Type your question here..." required></textarea>
+        </div>
 
+        <button type="submit" class="btn_register submit_question_btn">Send Question</button>
+      </form>
+    </div>
+
+    <!-- 2. Success border-->
+    <div id="askSuccessMessage" class="ask_success_box">
+      <div class="success_icon">✅</div>
+      <h2>Thank You!</h2>
+      <p class="success_main_text">Your question has been received.</p>
+      <p class="success_sub_text">
+        Please check your email (<span id="userSentEmail"></span>) soon for our answer!
+      </p>
+      <button id="closeSuccessBtn" class="btn_register full_width_btn">Got it</button>
+    </div>
+
+  </div>
+</div>
+
+      <!-- FAQ asked questions -->
       <div class="faq_container">
         <div class="faq_column">
           <div class="faq_item active">
@@ -340,15 +388,15 @@
           <div class="footer_column">
             <h4>Connect With Us</h4>
             <div class="social_icons">
-              <a href="https://www.facebook.com/" class="social_item"
-                ><img src="../images/Facebook-Icon.png" alt="FB"
-              /></a>
-              <a href="https://x.com/" class="social_item"
-                ><img src="../images/Twitter-Icon.png" alt="TW"
-              /></a>
-              <a href="https://www.linkedin.com/" class="social_item"
-                ><img src="../images/Linkdin-Icon.png" alt="LI"
-              /></a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social_item">
+                <img src="../images/Facebook-Icon.png" alt="FB"/>
+              </a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social_item">
+                <img src="../images/Twitter-Icon.png" alt="TW"/>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social_item">
+                <img src="../images/Linkdin-Icon.png" alt="LI"/>
+              </a>
             </div>
           </div>
         </div>
@@ -367,6 +415,7 @@
         </div>
       </div>
     </footer>
+    <!-- Scroll to Top -->
     <button id="backToTop" class="back_to_top">
       <img src="../images/arrowup-image.png" alt="Up" />
     </button>

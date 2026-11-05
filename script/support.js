@@ -1,4 +1,61 @@
-// 1. ელემენტების მონიშვნა (მივწვდებით ID-ებით)
+//1. ნოტიფიკაციის ღილაკი
+document.addEventListener("DOMContentLoaded", () => {
+  const notifBtn = document.getElementById("notifBtn");
+  const notifModal = document.getElementById("notifModal");
+  const closeNotifBtn = document.getElementById("closeNotifBtn");
+  const goSupportBtn = document.getElementById("goSupportBtn");
+
+  if (notifBtn && notifModal) {
+    // 1) ზარზე დაჭერისას გამოჩნდეს ჩარჩო
+    notifBtn.addEventListener("click", () => {
+      notifModal.classList.add("show");
+    });
+
+    // 2) Cancel ღილაკზე დაჭერისას დაიხუროს
+    if (closeNotifBtn) {
+      closeNotifBtn.addEventListener("click", () => {
+        notifModal.classList.remove("show");
+      });
+    }
+
+    // 3) Register ღილაკზე დაჭერის ლოგიკა
+    if (goSupportBtn) {
+      goSupportBtn.addEventListener("click", () => {
+        const currentPath = window.location.pathname;
+
+        // თუ უკვე Support-ის გვერდზე ვართ:
+        if (currentPath.includes("support.html")) {
+          notifModal.classList.remove("show");
+
+          // თუ ფორმას აქვს id="supportForm", ჩასქროლავს პირდაპირ ფორმასთან
+          const formElement =
+            document.getElementById("supportForm") ||
+            document.querySelector("form");
+          if (formElement) {
+            formElement.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+        // თუ Movies გვერდზე ვართ (pages ფოლდერში):
+        else if (currentPath.includes("/pages/")) {
+          window.location.href = "./support.html";
+        }
+        // თუ მთავარ გვერდზე (index.html) ვართ:
+        else {
+          window.location.href = "./pages/support.html";
+        }
+      });
+    }
+
+    // 4) შავ ფონზე დაჭერისას დაიხუროს
+    notifModal.addEventListener("click", (e) => {
+      if (e.target === notifModal) {
+        notifModal.classList.remove("show");
+      }
+    });
+  }
+});
+
+// 2. ელემენტების მონიშვნა (მივწვდებით ID-ებით)
 const supportForm = document.getElementById("supportForm");
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
@@ -8,14 +65,14 @@ const message = document.getElementById("message");
 const terms = document.getElementById("terms");
 const countrySelect = document.getElementById("country-select");
 
-// 2. ერორების ტექსტური ელემენტები
+// 3. ერორების ტექსტური ელემენტები
 const firstNameError = document.getElementById("firstNameError");
 const lastNameError = document.getElementById("lastNameError");
 const emailError = document.getElementById("emailError");
 const messageError = document.getElementById("messageError");
 const termsError = document.getElementById("termsError");
 
-// 3. ქვეყნის კოდის ლოგიკა (დროშის შეცვლისას)
+// 4. ქვეყნის კოდის ლოგიკა (დროშის შეცვლისას)
 phone.value = countrySelect.value + " "; // საწყისი მნიშვნელობა მაგ: (+995)
 
 countrySelect.addEventListener("change", function () {
@@ -23,20 +80,20 @@ countrySelect.addEventListener("change", function () {
   phone.focus();
 });
 
-// --- 4. ნომერში ტექსტის აკრძალვა ---
+// --- 5. ნომერში ტექსტის აკრძალვა ---
 phone.addEventListener("input", function (e) {
   // replace მეთოდით ვშლი ყველაფერს, რაც არ არის ციფრი ან პლუსი
   e.target.value = e.target.value.replace(/[^0-9+ ]/g, "");
 });
 
-// --- 5. ახალი ლოგიკა: მესიჯის 200 სიმბოლოს ლიმიტი ---
+// --- 6. ახალი ლოგიკა: მესიჯის 200 სიმბოლოს ლიმიტი ---
 message.addEventListener("input", function () {
   if (this.value.length > 200) {
     this.value = this.value.slice(0, 200); // 200-ის მერე აღარაფერს წერს
   }
 });
 
-// 5. ფორმის გაგზავნის (Submit) ლოგიკა
+// 7. ფორმის გაგზავნის (Submit) ლოგიკა
 supportForm.addEventListener("submit", function (e) {
   e.preventDefault(); // რომ გვერდი არ გადაიტვირთოს
 
@@ -83,7 +140,7 @@ supportForm.addEventListener("submit", function (e) {
     isValid = false;
   }
 
-  // 5. თუ ყველაფერი სწორია (Success)
+  // 8. თუ ყველაფერი სწორია (Success)
   if (isValid) {
     // ფორმის კონტეინერის ჩანაცვლება მადლობის ტექსტით
     const formContainer = document.querySelector(".support_formcontainer");
@@ -97,58 +154,80 @@ supportForm.addEventListener("submit", function (e) {
   }
 });
 
-const askQuestionBtn = document.querySelector(".ask_question_btn");
+//FAQ question border modal
+document.addEventListener("DOMContentLoaded", () => {
+  const askQuestionBtn = document.querySelector(".ask_question_btn");
+  const askQuestionModal = document.getElementById("askQuestionModal");
+  const closeAskModal = document.getElementById("closeAskModal");
+  const askQuestionForm = document.getElementById("askQuestionForm");
 
-// ვამოწმებ ბრაუზერის მეხსიერებას, არის თუ არა მომხმარებელი უკვე "დარეგისტრირებული"
-let isLoggedIn = localStorage.getItem("isRegistered") === "true";
+  const askFormContainer = document.getElementById("askFormContainer");
+  const askSuccessMessage = document.getElementById("askSuccessMessage");
+  const userSentEmail = document.getElementById("userSentEmail");
+  const closeSuccessBtn = document.getElementById("closeSuccessBtn");
 
-askQuestionBtn.addEventListener("click", () => {
-  if (!isLoggedIn) {
-    // თუ არ არის დარეგისტრირებული
-    let wantToRegister = confirm(
-      "You are not registered yet. Would you like to register to ask a question?",
-    );
-
-    if (wantToRegister) {
-      let email = prompt("Please enter your email for registration:");
-
-      // ვალიდაცია (ცარიელი არ იყოს და @ ჰქონდეს)
-      if (email && email.includes("@")) {
-        alert("Registration successful!");
-        localStorage.setItem("isRegistered", "true"); // ვინახავთ ბრაუზერში
-        isLoggedIn = true;
-        askQuestionProcess();
-      } else {
-        alert("Invalid email address. Please try again.");
+  // მოდალის პირვანდელ მდგომარეობაში დაბრუნება და დახურვა
+  function resetAndCloseModal() {
+    askQuestionModal.classList.remove("show");
+    setTimeout(() => {
+      if (askFormContainer && askSuccessMessage) {
+        askFormContainer.style.display = "block";
+        askSuccessMessage.style.display = "none";
       }
+      if (askQuestionForm) askQuestionForm.reset();
+    }, 300);
+  }
+
+  if (askQuestionBtn && askQuestionModal) {
+    // 1. "Ask a Question" ღილაკზე დაჭერისას მოდალის გახსნა
+    askQuestionBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      askQuestionModal.classList.add("show");
+    });
+
+    // 2. X ღილაკზე დაჭერით დახურვა
+    if (closeAskModal) {
+      closeAskModal.addEventListener("click", resetAndCloseModal);
     }
-  } else {
-    // თუ უკვე დარეგისტრირებულია
-    askQuestionProcess();
+
+    // 3. შავ ფონზე (Backdrop) დაჭერით დახურვა
+    askQuestionModal.addEventListener("click", (e) => {
+      if (e.target === askQuestionModal) {
+        resetAndCloseModal();
+      }
+    });
+
+    // 4. წარმატების ფანჯარაში "Got it" ღილაკზე დაჭერით დახურვა
+    if (closeSuccessBtn) {
+      closeSuccessBtn.addEventListener("click", resetAndCloseModal);
+    }
+
+    // 5. ფორმის გაგზავნა (ALERT-ის გარეშე!)
+    if (askQuestionForm) {
+      askQuestionForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("askEmail").value;
+        if (userSentEmail) userSentEmail.textContent = email;
+
+        // ფორმას ვმალავთ და იმავე ჩარჩოში ვუჩვენებთ წარმატების შეტყობინებას
+        askFormContainer.style.display = "none";
+        askSuccessMessage.style.display = "block";
+      });
+    }
   }
 });
 
-function askQuestionProcess() {
-  let userQuestion = prompt("Type your question here:");
-
-  if (userQuestion && userQuestion.trim() !== "") {
-    alert(
-      "Your question has been received. You will receive a notification once we have an answer!",
-    );
-  } else if (userQuestion === "") {
-    alert("Question cannot be empty!");
-  }
-}
-// 6. კითხვები
+// 9. კითხვები
 document.querySelectorAll(".faq_question").forEach((item) => {
   item.addEventListener("click", () => {
     const parent = item.closest(".faq_item");
     const icon = item.querySelector(".faq_icon");
 
-    // 1. ამოწმებს, ეს კონკრეტული კითხვა უკვე გახსნილია თუ არა
+    // 1). ამოწმებს, ეს კონკრეტული კითხვა უკვე გახსნილია თუ არა
     const isOpen = parent.classList.contains("active");
 
-    // 2. ხურავს ყველა სხვა გახსნილ კითხვას
+    // 2) ხურავს ყველა სხვა გახსნილ კითხვას
     document.querySelectorAll(".faq_item").forEach((otherItem) => {
       if (otherItem !== parent) {
         otherItem.classList.remove("active");
@@ -158,7 +237,7 @@ document.querySelectorAll(".faq_question").forEach((item) => {
       }
     });
 
-    // 3. ახლა ვხსნით ან ვკეტავთ იმას, რომელსაც დავაჭირეთ
+    // 3) ახლა ვხსნით ან ვკეტავთ იმას, რომელსაც დავაჭირეთ
     if (isOpen) {
       parent.classList.remove("active");
       icon.textContent = "+";
@@ -169,7 +248,7 @@ document.querySelectorAll(".faq_question").forEach((item) => {
   });
 });
 
-//7. სქროლი 300პხ ს მერე
+//9. სქროლი 300პხ ს მერე
 const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {

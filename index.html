@@ -9,12 +9,14 @@
     <script src="./script/script.js" defer></script>
   </head>
   <body>
-    
+<!-- Cookie -->
 <div id="cookieModal" class="cookie_modal">
   <div class="cookie_box">
     <div class="cookie_icon">🍪</div>
     <h2>Cookie Consent</h2>
-    <p>We use cookies to ensure you get the best experience on StreamVibe. <br> You must accept our policies to continue using this site.</p>
+    <p>We use cookies to ensure you get the best experience on StreamVibe.
+       <br> 
+       You must accept our policies to continue using this site.</p>
     <div class="cookie_buttons">
       <button id="acceptBtn" class="btn_accept">Accept All</button>
       <button id="rejectBtn" class="btn_reject">Reject & Exit</button>
@@ -47,16 +49,28 @@
         </ul>
       </nav>
 
-      <!-- right icons -->
+      <!-- Notification icon -->
       <div class="zari_div">
-        <a href="./index.html">
-          <img src="./images/lupa.png" alt="search" />
-        </a>
-        <a href="./index.html">
+        <button id="notifBtn" class="notif_button">
           <img src="./images/zari.png" alt="notifications" />
-        </a>
+         </button>
       </div>
     </header>
+
+    <!-- Notification icon box -->
+<div id="notifModal" class="custom_modal">
+  <div class="custom_modal_box">
+    <div class="modal_icon">
+      🔔
+    </div>
+      <h2>Stay Updated!</h2>
+      <p>To receive updates and notifications,<br> please register on the Support page!</p>
+        <div class="custom_modal_buttons">
+          <button id="closeNotifBtn" class="btn_cancel">Cancel</button>
+          <button id="goSupportBtn" class="btn_register">Register</button>
+        </div>
+  </div>
+</div>
 
     <div class="Sub_container">
       <section class="hero_section">
@@ -79,9 +93,9 @@
         </div>
 
         <div class="hero_overlay">
-          <img src="images/Image.png" class="hero_image1" />
-          <img src="images/Fade Out Top.png" class="hero_FadeOutTop" />
-          <img src="images/Fade Out Bottom.png" class="hero_FadeOutBottom" />
+          <img src="images/Image.png" class="hero_image1" alt="hero overlay" />
+          <img src="images/Fade Out Top.png" class="hero_FadeOutTop" alt="fade top" />
+          <img src="images/Fade Out Bottom.png" class="hero_FadeOutBottom" alt="fade bottom" />
         </div>
       </section>
     </div>
@@ -102,7 +116,7 @@
     <br />
     <br />
 
-    <!-- ზემოთა ჟანრების ფოტოების სქროლი  -->
+    <!-- Genres container top  -->
     <div class="genres_container">
       <div class="genres_textcontainer">
         <h1 class="genres_textheading">
@@ -126,7 +140,7 @@
         </button>
       </div>
     </div>
-    <!-- ქვემოთა ჟანრების ფოტოების სქროლი  -->
+    <!-- Genres container bottom  -->
    <div class="genres_slider" id="genreSlider">
   <div class="genre_card">
     <div class="card_image_container">
@@ -223,7 +237,7 @@
       </div>
     </div>
     
-
+<!-- Devices Section -->
     <section class="devices_section">
       <div class="devices_textcontainer">
         <h1 class="devices_h1">
@@ -277,7 +291,7 @@
           </p>
         </div>
 
-
+<!--Device cards-->
         <div class="device_cards">
           <div class="device_header">
             <div class="icons">
@@ -318,7 +332,7 @@
         </div>
         </section>
         
-
+<!-- Plans section -->
         <section class="plans_section">
           <div class="plans_header">
             <div class="plans_textcontainer">
@@ -395,7 +409,7 @@
             </div>
         </section>
 
-
+<!-- Free Trial Banner -->
    <div class="freetrial_container">
     
     <img src="./images/freetrial_BackgroundImages.png" alt="Movies Grid Background" class="free_trial_bg">
@@ -413,9 +427,9 @@
 
    </div>
 
+   <!-- Footer -->
 <footer class="footer">
   <div class="footer_container">
-    
     <div class="footer_top">
       <div class="footer_column">
         <h4>Home</h4>
@@ -449,9 +463,15 @@
       <div class="footer_column">
         <h4>Connect With Us</h4>
         <div class="social_icons">
-          <a href="https://www.facebook.com/" class="social_item"><img src="./images/Facebook-Icon.png" alt="FB"></a>
-          <a href="https://x.com/" class="social_item"><img src="./images/Twitter-Icon.png" alt="TW"></a>
-          <a href="https://www.linkedin.com/" class="social_item"><img src="./images/Linkdin-Icon.png" alt="LI"></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social_item">
+            <img src="./images/Facebook-Icon.png" alt="FB">
+          </a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social_item">
+            <img src="./images/Twitter-Icon.png" alt="TW">
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social_item">
+            <img src="./images/Linkdin-Icon.png" alt="LI">
+          </a>
         </div>
       </div>
     </div>
@@ -471,6 +491,7 @@
   </div>
 </footer>
 </div>
+<!-- scroll to top -->
 </section>
      <button id="backToTop" class="back_to_top">
         <img src="./images/arrowup-image.png" alt="Up" />

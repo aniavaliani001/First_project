@@ -27,6 +27,108 @@ header {
   padding-bottom: 30px;
   padding-left: 162px;
 }
+/* Notification icon styles */
+.notif_button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.notif_button:hover {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.custom_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: none; /* თავიდან დამალულია */
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+/* როცა გამოჩნდება */
+.custom_modal.show {
+  display: flex !important;
+}
+
+/* ჩარჩო (Notif Card) */
+.custom_modal_box {
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 35px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.9), 0px 0px 15px rgba(229, 0, 0, 0.15);
+  font-family: 'Manrope', sans-serif;
+}
+
+.modal_icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.custom_modal_box h2 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.custom_modal_box p {
+  color: #999999;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.custom_modal_buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn_cancel, .btn_register {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn_cancel {
+  background: transparent;
+  color: #999999;
+  border: 1px solid #262626;
+}
+
+.btn_cancel:hover {
+  background: #262626;
+  color: #ffffff;
+}
+
+.btn_register {
+  background: #e50000;
+  color: #ffffff;
+  border: none;
+}
+
+.btn_register:hover {
+  background: #ff1a1a;
+}
 
 /* logo */
 .header_logo img {
@@ -411,6 +513,182 @@ header {
   /* "ამონათების" ეფექტი */
   box-shadow: 0 0 20px rgba(229, 0, 0, 0.6);
   transform: scale(1.05);
+}
+
+/* Ask Question Custom border Styling */
+.ask_question_box {
+  position: relative;
+  max-width: 480px;
+  text-align: left;
+}
+
+.modal_close_x {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal_close_x:hover {
+  color: #fff;
+}
+
+.ask_question_box h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.ask_question_box p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.ask_form .form_group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ask_form label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ask_form input,
+.ask_form textarea {
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.ask_form input:focus,
+.ask_form textarea:focus {
+  border-color: #e50000;
+}
+
+.submit_question_btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Ask a Question Custom Modal & Success Box */
+
+.ask_question_box {
+  position: relative;
+  max-width: 480px;
+  text-align: left;
+}
+
+.modal_close_x {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal_close_x:hover {
+  color: #fff;
+}
+
+.ask_question_box h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.ask_question_box p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.ask_form .form_group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ask_form label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ask_form input,
+.ask_form textarea {
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.ask_form input:focus,
+.ask_form textarea:focus {
+  border-color: #e50000;
+}
+
+.submit_question_btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Success State Styles */
+.ask_success_box {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success_icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.ask_success_box h2 {
+  margin-bottom: 10px;
+}
+
+.success_main_text {
+  margin: 15px 0;
+}
+
+.success_sub_text {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.success_sub_text span {
+  color: #fff;
+  font-weight: bold;
+}
+
+.full_width_btn {
+  width: 100%;
 }
 
 .faq_container {

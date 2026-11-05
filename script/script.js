@@ -1,33 +1,33 @@
-//cookie
+//1. cookie
 document.addEventListener("DOMContentLoaded", () => {
-    const cookieModal = document.getElementById("cookieModal");
-    const acceptBtn = document.getElementById("acceptBtn");
-    const rejectBtn = document.getElementById("rejectBtn");
+  const cookieModal = document.getElementById("cookieModal");
+  const acceptBtn = document.getElementById("acceptBtn");
+  const rejectBtn = document.getElementById("rejectBtn");
 
-    if (!sessionStorage.getItem("cookiesAccepted")) {
-        cookieModal.style.display = "flex";
-        document.body.classList.add("no-scroll");
-    }
+  if (!sessionStorage.getItem("cookiesAccepted")) {
+    cookieModal.style.display = "flex";
+    document.body.classList.add("no-scroll");
+  }
 
-    acceptBtn.addEventListener("click", () => {
-        sessionStorage.setItem("cookiesAccepted", "true");
-        cookieModal.style.display = "none";
-        document.body.classList.remove("no-scroll");
-    });
+  acceptBtn.addEventListener("click", () => {
+    sessionStorage.setItem("cookiesAccepted", "true");
+    cookieModal.style.display = "none";
+    document.body.classList.remove("no-scroll");
+  });
 
-    rejectBtn.addEventListener("click", () => {
-        window.location.href = "https://www.google.com";
-    });
+  rejectBtn.addEventListener("click", () => {
+    window.location.href = "https://www.google.com";
+  });
 });
 
 const logo = document.querySelector(".hero_abstract");
 
-// 1. დატრიალება ჩატვირთვისას
+// 2. დატრიალება ჩატვირთვისას
 window.addEventListener("load", () => {
   logo.classList.add("spin-animation");
 });
 
-// 2. დატრიალება მაუსის მიტანისას (Hover)
+// 3. დატრიალება მაუსის მიტანისას (Hover)
 logo.addEventListener("mouseenter", () => {
   logo.style.animation = "none"; // ჯერ ვაჩერებთ წინა ანიმაციას
   setTimeout(() => {
@@ -35,7 +35,43 @@ logo.addEventListener("mouseenter", () => {
   }, 10);
 });
 
-//ფილმის ჟანრების სლაიდერი
+//4. ნოტიფიკაციის ღილაკი
+document.addEventListener("DOMContentLoaded", () => {
+  const notifBtn = document.getElementById("notifBtn");
+  const notifModal = document.getElementById("notifModal");
+  const closeNotifBtn = document.getElementById("closeNotifBtn");
+  const goSupportBtn = document.getElementById("goSupportBtn");
+
+  if (notifBtn && notifModal) {
+    // 1) ზარზე დაჭერისას გამოჩნდეს ჩარჩო
+    notifBtn.addEventListener("click", () => {
+      notifModal.classList.add("show");
+    });
+
+    // 2) Cancel ღილაკზე დაჭერისას დაიხუროს
+    if (closeNotifBtn) {
+      closeNotifBtn.addEventListener("click", () => {
+        notifModal.classList.remove("show");
+      });
+    }
+
+    // 3) Register ღილაკზე დაჭერისას გადავიდეს Support-ის გვერდზე
+    if (goSupportBtn) {
+      goSupportBtn.addEventListener("click", () => {
+        window.location.href = "./pages/support.html";
+      });
+    }
+
+    // 4) შავ ფონზე დაჭერისას დაიხუროს
+    notifModal.addEventListener("click", (e) => {
+      if (e.target === notifModal) {
+        notifModal.classList.remove("show");
+      }
+    });
+  }
+});
+
+//5. ფილმის ჟანრების სლაიდერი
 const slider = document.getElementById("genreSlider");
 const leftBtn = document.getElementById("genreLeft");
 const rightBtn = document.getElementById("genreRight");
@@ -78,7 +114,16 @@ document.querySelectorAll(".genre_card").forEach((card) => {
   observer.observe(card);
 });
 
-//თვიური და წლიური გადასახადის ღილაკები
+//6. Genre სლაიდერზე დაჭერისას გადავიდეს Movies_shows_Page- ზე
+const genreCards = document.querySelectorAll(".genre_card");
+
+genreCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    window.location.href = "./pages/movies_shows_button.html";
+  });
+});
+
+//7. თვიური და წლიური გადასახადის ღილაკები
 document.addEventListener("DOMContentLoaded", () => {
   const monthlyBtn = document.getElementById("monthlyBtn");
   const yearlyBtn = document.getElementById("yearlyBtn");
@@ -115,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// სქროლი 300პხ ს მერე
+//8. სქროლი 300პხ ს მერე
 const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {

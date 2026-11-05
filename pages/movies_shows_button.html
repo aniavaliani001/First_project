@@ -34,17 +34,28 @@
         </ul>
       </nav>
 
-      <!-- right icons -->
+      <!-- Notification icon -->
       <div class="zari_div">
-        <a href="../index.html">
-          <img src="../images/lupa.png" alt="search" />
-        </a>
-        <a href="../index.html">
+        <button id="notifBtn" class="notif_button">
           <img src="../images/zari.png" alt="notifications" />
-        </a>
+         </button>
       </div>
     </header>
 
+    <!-- Notification icon box -->
+    <div id="notifModal" class="custom_modal">
+      <div class="custom_modal_box">
+        <div class="modal_icon">
+          🔔
+        </div>
+          <h2>Stay Updated!</h2>
+          <p>To receive updates and notifications,<br> please register on the Support page!</p>
+            <div class="custom_modal_buttons">
+              <button id="closeNotifBtn" class="btn_cancel">Cancel</button>
+              <button id="goSupportBtn" class="btn_register">Register</button>
+            </div>
+      </div>
+    </div>
 
 
 
@@ -292,15 +303,15 @@
             <div class="footer_column">
               <h4>Connect With Us</h4>
               <div class="social_icons">
-                <a href="https://www.facebook.com/" class="social_item"
-                  ><img src="../images/Facebook-Icon.png" alt="FB"
-                /></a>
-                <a href="https://x.com/" class="social_item"
-                  ><img src="../images/Twitter-Icon.png" alt="TW"
-                /></a>
-                <a href="https://www.linkedin.com/" class="social_item"
-                  ><img src="../images/Linkdin-Icon.png" alt="LI"
-                /></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"  class="social_item">
+                  <img src="../images/Facebook-Icon.png" alt="FB"/>
+                </a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social_item">
+                  <img src="../images/Twitter-Icon.png" alt="TW"/>
+                </a>
+                <a href="https://www.linkedin.com/"target="_blank" rel="noopener noreferrer" class="social_item">
+                  <img src="../images/Linkdin-Icon.png" alt="LI"/>
+                </a>
               </div>
             </div>
           </div>
@@ -320,6 +331,7 @@
         </div>
       </footer>
     </div>
+    <!-- Scroll to Top -->
         <button id="backToTop" class="back_to_top">
           <img src="../images/arrowup-image.png" alt="Up" />
         </button>
