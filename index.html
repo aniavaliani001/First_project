@@ -30,8 +30,23 @@
         <img src="./images/logo.png" alt="logo" />
       </a>
 
+      <!-- Hamburger Button -->
+  <button class="hamburger_btn" id="hamburgerBtn" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Overlay background -->
+  <div class="menu_overlay" id="menuOverlay"></div>
+
       <!-- navigation -->
-      <nav class="buttons_container">
+      <nav class="buttons_container" id="mainNav">
+        <div class="mobile_menu_header">
+      <span class="menu_title">Menu</span>
+      <hr class="menu_divider" />
+    </div>
+
         <ul class="buttons_ul">
           <li class="buttons_li">
             <a class="home_button" href="index.html"> Home </a>

@@ -21,19 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const logo = document.querySelector(".hero_abstract");
+if (logo) {
+  // 2. დატრიალება ჩატვირთვისას
+  window.addEventListener("load", () => {
+    logo.classList.add("spin-animation");
+  });
 
-// 2. დატრიალება ჩატვირთვისას
-window.addEventListener("load", () => {
-  logo.classList.add("spin-animation");
-});
-
-// 3. დატრიალება მაუსის მიტანისას (Hover)
-logo.addEventListener("mouseenter", () => {
-  logo.style.animation = "none"; // ჯერ ვაჩერებთ წინა ანიმაციას
-  setTimeout(() => {
-    logo.style.animation = "logo-spin 1s ease-out"; // თავიდან ვუშვებთ
-  }, 10);
-});
+  // 3. დატრიალება მაუსის მიტანისას (Hover)
+  logo.addEventListener("mouseenter", () => {
+    logo.style.animation = "none"; // ჯერ ვაჩერებთ წინა ანიმაციას
+    setTimeout(() => {
+      logo.style.animation = "logo-spin 1s ease-out"; // თავიდან ვუშვებთ
+    }, 10);
+  });
+}
 
 //4. ნოტიფიკაციის ღილაკი
 document.addEventListener("DOMContentLoaded", () => {
@@ -70,8 +71,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// 5. Hamburger menu
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mainNav = document.getElementById("mainNav");
+  const menuOverlay = document.getElementById("menuOverlay");
 
-//5. ფილმის ჟანრების სლაიდერი
+  function toggleMenu() {
+    if (mainNav && hamburgerBtn) {
+      mainNav.classList.toggle("active");
+      hamburgerBtn.classList.toggle("active");
+      if (menuOverlay) menuOverlay.classList.toggle("active");
+    }
+  }
+
+  function closeMenu() {
+    if (mainNav && hamburgerBtn) {
+      mainNav.classList.remove("active");
+      hamburgerBtn.classList.remove("active");
+      if (menuOverlay) menuOverlay.classList.remove("active");
+    }
+  }
+
+  if (hamburgerBtn) hamburgerBtn.addEventListener("click", toggleMenu);
+  if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+});
+
+//6. ფილმის ჟანრების სლაიდერი
 const slider = document.getElementById("genreSlider");
 const leftBtn = document.getElementById("genreLeft");
 const rightBtn = document.getElementById("genreRight");
@@ -114,7 +140,7 @@ document.querySelectorAll(".genre_card").forEach((card) => {
   observer.observe(card);
 });
 
-//6. Genre სლაიდერზე დაჭერისას გადავიდეს Movies_shows_Page- ზე
+//7. Genre სლაიდერზე დაჭერისას გადავიდეს Movies_shows_Page- ზე
 const genreCards = document.querySelectorAll(".genre_card");
 
 genreCards.forEach((card) => {
@@ -123,7 +149,7 @@ genreCards.forEach((card) => {
   });
 });
 
-//7. თვიური და წლიური გადასახადის ღილაკები
+//8. თვიური და წლიური გადასახადის ღილაკები
 document.addEventListener("DOMContentLoaded", () => {
   const monthlyBtn = document.getElementById("monthlyBtn");
   const yearlyBtn = document.getElementById("yearlyBtn");
@@ -160,22 +186,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//8. სქროლი 300პხ ს მერე
+//9. სქროლი 300პხ ს მერე
 const backToTopBtn = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  // თუ 300 პიქსელზე მეტს ჩამოვსქროლავთ, ღილაკი გამოჩნდება
-  if (window.pageYOffset > 300) {
-    backToTopBtn.classList.add("show");
-  } else {
-    backToTopBtn.classList.remove("show");
-  }
-});
-
-backToTopBtn.addEventListener("click", () => {
-  // რბილი სქროლი ზემოთ ასასვლელად
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+if (backToTopBtn) {
+  window.addEventListener("scroll", () => {
+    // თუ 300 პიქსელზე მეტს ჩამოვსქროლავთ, ღილაკი გამოჩნდება
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
   });
-});
+
+  backToTopBtn.addEventListener("click", () => {
+    // რბილი სქროლი ზემოთ ასასვლელად
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}

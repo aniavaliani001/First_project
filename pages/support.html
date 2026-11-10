@@ -15,46 +15,67 @@
         <img src="../images/logo.png" alt="logo" />
       </a>
 
+      <!-- Hamburger Button -->
+      <button class="hamburger_btn" id="hamburgerBtn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Overlay background -->
+      <div class="menu_overlay" id="menuOverlay"></div>
+
       <!-- navigation -->
-      <nav class="buttons_container">
+      <nav class="buttons_container" id="mainNav">
+        <div class="mobile_menu_header">
+          <span class="menu_title">Menu</span>
+          <hr class="menu_divider" />
+        </div>
+
         <ul class="buttons_ul">
           <li class="buttons_li">
             <a class="home_button" href="../index.html"> Home </a>
           </li>
 
           <li class="buttons_li">
-            <a class="Movies_and_shows_button" href="../pages/movies_shows_button.html"> Movies & Shows </a>
+            <a
+              class="Movies_and_shows_button"
+              href="./movies_shows_button.html"
+            >
+              Movies & Shows
+            </a>
           </li>
 
           <li class="buttons_li">
-            <a class="support_button" href="../pages/support.html"> Support </a>
+            <a class="support_button" href="./support.html"> Support </a>
           </li>
         </ul>
       </nav>
 
-     <!-- Notification icon -->
+      <!-- Notification icon -->
       <div class="zari_div">
         <button id="notifBtn" class="notif_button">
           <img src="../images/zari.png" alt="notifications" />
-         </button>
+        </button>
       </div>
     </header>
 
     <!-- Notification icon box -->
     <div id="notifModal" class="custom_modal">
       <div class="custom_modal_box">
-        <div class="modal_icon">
-          🔔
+        <div class="modal_icon">🔔</div>
+        <h2>Stay Updated!</h2>
+        <p>
+          To receive updates and notifications,<br />
+          please register on the Support page!
+        </p>
+        <div class="custom_modal_buttons">
+          <button id="closeNotifBtn" class="btn_cancel">Cancel</button>
+          <button id="goSupportBtn" class="btn_register">Register</button>
         </div>
-          <h2>Stay Updated!</h2>
-          <p>To receive updates and notifications,<br> please register on the Support page!</p>
-            <div class="custom_modal_buttons">
-              <button id="closeNotifBtn" class="btn_cancel">Cancel</button>
-              <button id="goSupportBtn" class="btn_register">Register</button>
-            </div>
       </div>
     </div>
-<!-- Welcome -->
+    <!-- Welcome -->
     <section class="support_welcome">
       <div class="support_container">
         <div class="support_info">
@@ -70,7 +91,7 @@
             <img src="../images/support_gridimage.png" alt="Support Grid" />
           </div>
         </div>
-<!-- Forms -->
+        <!-- Forms -->
         <div class="support_formcontainer">
           <form class="support_form" id="supportForm" novalidate>
             <div class="form_row">
@@ -160,45 +181,62 @@
         </div>
         <button class="ask_question_btn">Ask a Question</button>
       </div>
-      
+
       <!-- Ask a Question Custom Border Modal -->
-<div id="askQuestionModal" class="custom_modal">
-  <div class="custom_modal_box ask_question_box">
-    <button id="closeAskModal" class="modal_close_x">&times;</button>
-    
-    <!-- 1. Form border -->
-    <div id="askFormContainer">
-      <h2>Ask a Question</h2>
-      <p>Enter your email and question below. <br> We'll reply to your email as soon as possible!</p>
-      
-      <form id="askQuestionForm" class="ask_form">
-        <div class="form_group">
-          <label for="askEmail">Your Email</label>
-          <input type="email" id="askEmail" placeholder="Enter your email" required />
+      <div id="askQuestionModal" class="custom_modal">
+        <div class="custom_modal_box ask_question_box">
+          <button id="closeAskModal" class="modal_close_x">&times;</button>
+
+          <!-- 1. Form border -->
+          <div id="askFormContainer">
+            <h2>Ask a Question</h2>
+            <p>
+              Enter your email and question below. <br />
+              We'll reply to your email as soon as possible!
+            </p>
+
+            <form id="askQuestionForm" class="ask_form">
+              <div class="form_group">
+                <label for="askEmail">Your Email</label>
+                <input
+                  type="email"
+                  id="askEmail"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div class="form_group">
+                <label for="askQuestion">Your Question</label>
+                <textarea
+                  id="askQuestion"
+                  rows="4"
+                  placeholder="Type your question here..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn_register submit_question_btn">
+                Send Question
+              </button>
+            </form>
+          </div>
+
+          <!-- 2. Success border-->
+          <div id="askSuccessMessage" class="ask_success_box">
+            <div class="success_icon">✅</div>
+            <h2>Thank You!</h2>
+            <p class="success_main_text">Your question has been received.</p>
+            <p class="success_sub_text">
+              Please check your email (<span id="userSentEmail"></span>) soon
+              for our answer!
+            </p>
+            <button id="closeSuccessBtn" class="btn_register full_width_btn">
+              Got it
+            </button>
+          </div>
         </div>
-        
-        <div class="form_group">
-          <label for="askQuestion">Your Question</label>
-          <textarea id="askQuestion" rows="4" placeholder="Type your question here..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn_register submit_question_btn">Send Question</button>
-      </form>
-    </div>
-
-    <!-- 2. Success border-->
-    <div id="askSuccessMessage" class="ask_success_box">
-      <div class="success_icon">✅</div>
-      <h2>Thank You!</h2>
-      <p class="success_main_text">Your question has been received.</p>
-      <p class="success_sub_text">
-        Please check your email (<span id="userSentEmail"></span>) soon for our answer!
-      </p>
-      <button id="closeSuccessBtn" class="btn_register full_width_btn">Got it</button>
-    </div>
-
-  </div>
-</div>
+      </div>
 
       <!-- FAQ asked questions -->
       <div class="faq_container">
@@ -347,9 +385,7 @@
             sign up for a free trial of StreamVibe.
           </p>
         </div>
-        <a href="../pages/support.html" class="freetrial_button"
-          >Start a Free Trial</a
-        >
+        <a href="./support.html" class="freetrial_button">Start a Free Trial</a>
       </div>
     </div>
 
@@ -366,36 +402,51 @@
 
           <div class="footer_column">
             <h4>Movies</h4>
-            <a href="../pages/movies_shows_button.html">Genres</a>
-            <a href="../pages/movies_shows_button.html">Trending</a>
-            <a href="../pages/movies_shows_button.html">New Release</a>
-            <a href="../pages/movies_shows_button.html">Popular</a>
+            <a href="./movies_shows_button.html">Genres</a>
+            <a href="./movies_shows_button.html">Trending</a>
+            <a href="./movies_shows_button.html">New Release</a>
+            <a href="./movies_shows_button.html">Popular</a>
           </div>
 
           <div class="footer_column">
             <h4>Shows</h4>
-            <a href="../pages/movies_shows_button.html">Genres</a>
-            <a href="../pages/movies_shows_button.html">Trending</a>
-            <a href="../pages/movies_shows_button.html">New Release</a>
-            <a href="../pages/movies_shows_button.html">Popular</a>
+            <a href="./movies_shows_button.html">Genres</a>
+            <a href="./movies_shows_button.html">Trending</a>
+            <a href="./movies_shows_button.html">New Release</a>
+            <a href="./movies_shows_button.html">Popular</a>
           </div>
 
           <div class="footer_column">
             <h4>Support</h4>
-            <a href="../pages/support.html">Contact Us</a>
+            <a href="./support.html">Contact Us</a>
           </div>
 
           <div class="footer_column">
             <h4>Connect With Us</h4>
             <div class="social_icons">
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social_item">
-                <img src="../images/Facebook-Icon.png" alt="FB"/>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social_item"
+              >
+                <img src="../images/Facebook-Icon.png" alt="FB" />
               </a>
-              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social_item">
-                <img src="../images/Twitter-Icon.png" alt="TW"/>
+              <a
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social_item"
+              >
+                <img src="../images/Twitter-Icon.png" alt="TW" />
               </a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social_item">
-                <img src="../images/Linkdin-Icon.png" alt="LI"/>
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social_item"
+              >
+                <img src="../images/Linkdin-Icon.png" alt="LI" />
               </a>
             </div>
           </div>

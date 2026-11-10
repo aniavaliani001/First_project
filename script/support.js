@@ -55,7 +55,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// 2. ელემენტების მონიშვნა (მივწვდებით ID-ებით)
+// 2. Hamburger menu
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mainNav = document.getElementById("mainNav");
+  const menuOverlay = document.getElementById("menuOverlay");
+
+  function toggleMenu() {
+    if (mainNav && hamburgerBtn) {
+      mainNav.classList.toggle("active");
+      hamburgerBtn.classList.toggle("active");
+      if (menuOverlay) menuOverlay.classList.toggle("active");
+    }
+  }
+
+  function closeMenu() {
+    if (mainNav && hamburgerBtn) {
+      mainNav.classList.remove("active");
+      hamburgerBtn.classList.remove("active");
+      if (menuOverlay) menuOverlay.classList.remove("active");
+    }
+  }
+
+  if (hamburgerBtn) hamburgerBtn.addEventListener("click", toggleMenu);
+  if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+});
+
+// 3. ელემენტების მონიშვნა (მივწვდებით ID-ებით)
 const supportForm = document.getElementById("supportForm");
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
@@ -65,96 +91,102 @@ const message = document.getElementById("message");
 const terms = document.getElementById("terms");
 const countrySelect = document.getElementById("country-select");
 
-// 3. ერორების ტექსტური ელემენტები
+// 4. ერორების ტექსტური ელემენტები
 const firstNameError = document.getElementById("firstNameError");
 const lastNameError = document.getElementById("lastNameError");
 const emailError = document.getElementById("emailError");
 const messageError = document.getElementById("messageError");
 const termsError = document.getElementById("termsError");
 
-// 4. ქვეყნის კოდის ლოგიკა (დროშის შეცვლისას)
-phone.value = countrySelect.value + " "; // საწყისი მნიშვნელობა მაგ: (+995)
+// 5. ქვეყნის კოდის ლოგიკა (დროშის შეცვლისას)
+if (phone && countrySelect) {
+  phone.value = countrySelect.value + " "; // საწყისი მნიშვნელობა მაგ: (+995)
 
-countrySelect.addEventListener("change", function () {
-  phone.value = countrySelect.value + " ";
-  phone.focus();
-});
+  countrySelect.addEventListener("change", function () {
+    phone.value = countrySelect.value + " ";
+    phone.focus();
+  });
 
-// --- 5. ნომერში ტექსტის აკრძალვა ---
-phone.addEventListener("input", function (e) {
-  // replace მეთოდით ვშლი ყველაფერს, რაც არ არის ციფრი ან პლუსი
-  e.target.value = e.target.value.replace(/[^0-9+ ]/g, "");
-});
+  // --- 6. ნომერში ტექსტის აკრძალვა ---
+  phone.addEventListener("input", function (e) {
+    // replace მეთოდით ვშლი ყველაფერს, რაც არ არის ციფრი ან პლუსი
+    e.target.value = e.target.value.replace(/[^0-9+ ]/g, "");
+  });
+}
 
-// --- 6. ახალი ლოგიკა: მესიჯის 200 სიმბოლოს ლიმიტი ---
-message.addEventListener("input", function () {
-  if (this.value.length > 200) {
-    this.value = this.value.slice(0, 200); // 200-ის მერე აღარაფერს წერს
-  }
-});
+// --- 7. ახალი ლოგიკა: მესიჯის 200 სიმბოლოს ლიმიტი ---
+if (message) {
+  message.addEventListener("input", function () {
+    if (this.value.length > 200) {
+      this.value = this.value.slice(0, 200); // 200-ის მერე აღარაფერს წერს
+    }
+  });
+}
 
-// 7. ფორმის გაგზავნის (Submit) ლოგიკა
-supportForm.addEventListener("submit", function (e) {
-  e.preventDefault(); // რომ გვერდი არ გადაიტვირთოს
+// 8. ფორმის გაგზავნის (Submit) ლოგიკა
+if (supportForm) {
+  supportForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // რომ გვერდი არ გადაიტვირთოს
 
-  // ერორების გასუფთავება ყოველ დაჭერაზე
-  firstNameError.textContent = "";
-  lastNameError.textContent = "";
-  emailError.textContent = "";
-  messageError.textContent = "";
-  termsError.textContent = "";
+    // ერორების გასუფთავება ყოველ დაჭერაზე
+    firstNameError.textContent = "";
+    lastNameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+    termsError.textContent = "";
 
-  let isValid = true;
+    let isValid = true;
 
-  // First Name ვალიდაცია
-  if (firstName.value.trim() === "") {
-    firstNameError.textContent = "First Name is required";
-    isValid = false;
-  }
+    // First Name ვალიდაცია
+    if (firstName.value.trim() === "") {
+      firstNameError.textContent = "First Name is required";
+      isValid = false;
+    }
 
-  // Last Name ვალიდაცია
-  if (lastName.value.trim() === "") {
-    lastNameError.textContent = "Last Name is required";
-    isValid = false;
-  }
+    // Last Name ვალიდაცია
+    if (lastName.value.trim() === "") {
+      lastNameError.textContent = "Last Name is required";
+      isValid = false;
+    }
 
-  // Email ვალიდაცია (ზუსტი ერორით)
-  const emailVal = email.value.trim();
-  if (emailVal === "") {
-    emailError.textContent = "Email is required";
-    isValid = false;
-  } else if (!emailVal.includes("@")) {
-    emailError.textContent = `mail is required, please include an "@" in the email adress. '${emailVal}' is missing an "@".`;
-    isValid = false;
-  }
+    // Email ვალიდაცია (ზუსტი ერორით)
+    const emailVal = email.value.trim();
+    if (emailVal === "") {
+      emailError.textContent = "Email is required";
+      isValid = false;
+    } else if (!emailVal.includes("@")) {
+      emailError.textContent = `mail is required, please include an "@" in the email adress. '${emailVal}' is missing an "@".`;
+      isValid = false;
+    }
 
-  // Message ვალიდაცია
-  if (message.value.trim() === "") {
-    messageError.textContent = "Message is required";
-    isValid = false;
-  }
+    // Message ვალიდაცია
+    if (message.value.trim() === "") {
+      messageError.textContent = "Message is required";
+      isValid = false;
+    }
 
-  // Terms (Checkbox) ვალიდაცია
-  if (!terms.checked) {
-    termsError.textContent = "You must agree to the terms";
-    isValid = false;
-  }
+    // Terms (Checkbox) ვალიდაცია
+    if (!terms.checked) {
+      termsError.textContent = "You must agree to the terms";
+      isValid = false;
+    }
 
-  // 8. თუ ყველაფერი სწორია (Success)
-  if (isValid) {
-    // ფორმის კონტეინერის ჩანაცვლება მადლობის ტექსტით
-    const formContainer = document.querySelector(".support_formcontainer");
-    formContainer.innerHTML = `
+    // 9. თუ ყველაფერი სწორია (Success)
+    if (isValid) {
+      // ფორმის კონტეინერის ჩანაცვლება მადლობის ტექსტით
+      const formContainer = document.querySelector(".support_formcontainer");
+      formContainer.innerHTML = `
             <div style="text-align: center; padding: 60px 20px; color: white;">
                 <h2 style="font-size: 32px; margin-bottom: 20px;">Thank you, ${firstName.value}!</h2>
                 <p style="color: #999999; font-size: 18px;">Your message has been received. We will get back to you soon.</p>
                 <button onclick="window.location.reload()" style="margin-top: 30px; background: #e50000; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer;">Send Another Message</button>
             </div>
         `;
-  }
-});
+    }
+  });
+}
 
-//FAQ question border modal
+// 10. FAQ question border modal
 document.addEventListener("DOMContentLoaded", () => {
   const askQuestionBtn = document.querySelector(".ask_question_btn");
   const askQuestionModal = document.getElementById("askQuestionModal");
@@ -218,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// 9. კითხვები
+// 10. კითხვები
 document.querySelectorAll(".faq_question").forEach((item) => {
   item.addEventListener("click", () => {
     const parent = item.closest(".faq_item");
@@ -248,22 +280,24 @@ document.querySelectorAll(".faq_question").forEach((item) => {
   });
 });
 
-//9. სქროლი 300პხ ს მერე
+// 11. სქროლი 300პხ ს მერე
 const backToTopBtn = document.getElementById("backToTop");
 
-window.addEventListener("scroll", () => {
-  // თუ 300 პიქსელზე მეტს ჩამოვსქროლავთ, ღილაკი გამოჩნდება
-  if (window.pageYOffset > 300) {
-    backToTopBtn.classList.add("show");
-  } else {
-    backToTopBtn.classList.remove("show");
-  }
-});
-
-backToTopBtn.addEventListener("click", () => {
-  // რბილი სქროლი ზემოთ ასასვლელად
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+if (backToTopBtn) {
+  window.addEventListener("scroll", () => {
+    // თუ 300 პიქსელზე მეტს ჩამოვსქროლავთ, ღილაკი გამოჩნდება
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
   });
-});
+
+  backToTopBtn.addEventListener("click", () => {
+    // რბილი სქროლი ზემოთ ასასვლელად
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}
