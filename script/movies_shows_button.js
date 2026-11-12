@@ -215,6 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 5. Initialize Sliders
   initGenreSlider("genresSlider", "genresLeft", "genresRight");
   initGenreSlider("top10Slider", "top10Left", "top10Right");
+  initGenreSlider("trendingSlider", "trendingLeft", "trendingRight");
+  initGenreSlider("newReleasesSlider", "newReleasesLeft", "newReleasesRight");
+  initGenreSlider("mustWatchSlider", "mustWatchLeft", "mustWatchRight");
 
   // 6. Scroll to top
   const backToTopBtn = document.getElementById("backToTop");

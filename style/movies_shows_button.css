@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap");
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   width: 100%;
@@ -273,8 +269,9 @@ header {
 .hero_section {
   display: flex;
   justify-content: center;
-  padding: 120px 20px 50px 20px;
+  padding: 35px 20px 50px 20px;
   position: relative;
+  margin-top: 0;
   z-index: 1 !important;
 }
 
@@ -523,20 +520,7 @@ header {
   display: none;
 }
 
-.cards_slider .genre_card {
-  flex: 0 0 298px !important;
-  width: 298px !important;
-  height: 404px !important;
-  background: #1a1a1a;
-  border: 1px solid #262626;
-  border-radius: 12px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
+
 
 .cards_slider .genre_card:hover {
   border-color: #e50000 !important;
@@ -697,20 +681,20 @@ header {
 .genres_slider::-webkit-scrollbar {
   display: none;
 }
-
+.cards_slider .genre_card,
 .genre_card {
-  flex: 0 0 298px !important;
-  width: 298px !important;
-  max-width: 295px !important;
+  flex: 0 0 calc((100% - 60px) / 4) !important;
+  width: calc((100% - 60px) / 4) !important;
+  max-width: none !important;
   height: 404px !important;
   background: #1a1a1a;
   border: 1px solid #262626;
   border-radius: 12px;
-  padding: 30px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   transition: all 0.4s ease;
   cursor: pointer;
 }
@@ -797,6 +781,82 @@ header {
   height: 16.875px;
 }
 
+/* ==========================================
+   Single Movie Cards Specific Info
+   ========================================== */
+.movie_single_card {
+  padding: 16px !important;
+  height: 380px !important;
+}
+
+.movie_single_card .card_image_container {
+  height: 290px !important;
+}
+
+.movie_card_info {
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 12px !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.release_info {
+  box-sizing: border-box !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 12px !important;
+  color: #999999 !important;
+  background: #141414 !important;
+  border: 1px solid #262626 !important;
+  border-radius: 51px !important;
+  padding: 6px 10px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.info_tag {
+  font-family: "Manrope", sans-serif !important;
+  font-size: 12px !important;
+  color: #999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  background: #141414 !important;
+  border: 1px solid #262626 !important;
+  border-radius: 51px !important;
+  padding: 6px 10px !important;
+  white-space: nowrap !important;
+}
+
+.info_tag.stars {
+  font-size: 11px !important;
+  padding: 6px 8px !important;
+  letter-spacing: -1px !important;
+  color: transparent !important;
+  text-shadow: 0 0 0 #e50000 !important;
+}
+
+.release_info {
+  justify-content: center !important;
+  width: 100% !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 12px !important;
+  color: #999999 !important;
+  background: #141414 !important;
+  border: 1px solid #262626 !important;
+  border-radius: 51px !important;
+  padding: 6px 12px !important;
+}
 
 /* ==========================================
    Glow & Animation (ეს ნაწილი აკლდა!)
@@ -1181,6 +1241,12 @@ header {
 
   .block_header h2 {
     font-size: 20px !important;
+  }
+
+  .cards_slider .genre_card,
+  .genre_card {
+    flex: 0 0 260px !important;
+    width: 260px !important;
   }
 
   .freetrial_container {
