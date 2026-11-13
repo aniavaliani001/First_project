@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "../images/avengersimage.png",
     },
     {
-      title: "Kantara",
-      desc: "A fiery young man clashes with an unflinching forest officer in a south Indian village where spirituality, fate and folklore rule the lands.",
-      image: "../images/kantarimage.png",
+      title: "Money Heist",
+      desc: "An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.",
+      image: "../images/moneyheist.png",
     },
     {
       title: "Stranger Things",
@@ -218,7 +218,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initGenreSlider("trendingSlider", "trendingLeft", "trendingRight");
   initGenreSlider("newReleasesSlider", "newReleasesLeft", "newReleasesRight");
   initGenreSlider("mustWatchSlider", "mustWatchLeft", "mustWatchRight");
-
+  // Shows Sliders
+  initGenreSlider("showsGenresSlider", "showsGenresLeft", "showsGenresRight");
+  initGenreSlider("showsTop10Slider", "showsTop10Left", "showsTop10Right");
+  initGenreSlider("trendingShowsSlider", "trendingShowsLeft", "trendingShowsRight");
+  initGenreSlider("newShowsSlider", "newShowsLeft", "newShowsRight");
+  initGenreSlider("mustWatchShowsSlider", "mustWatchShowsLeft", "mustWatchShowsRight");
+  
   // 6. Scroll to top
   const backToTopBtn = document.getElementById("backToTop");
   if (backToTopBtn) {
